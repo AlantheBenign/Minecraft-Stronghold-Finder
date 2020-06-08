@@ -8,7 +8,15 @@
 </head>
 
 <body onload="brython()">
-	<script type="text/python" scr="finder-html.py"></script>
+<script type="text/python">
+from browser import document
+from browser.template import Template
+
+def nrm(event,element):
+	element.data.myname = document['write'].value
+
+Template('name',[nmr]).render(myname="")
+</script>
 
 <div id="name">
 	<input id="write" b-on="change:nrm" type="text"/>
