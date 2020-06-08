@@ -1,9 +1,12 @@
 import numpy as np
 
+#hitCircle calculates where the first stronghold generation ring starts, where the player would "hit" it, moving directly forward
+#and calculates the position to the second ender eye throw
 def hitCircle(pX,pZ,angle):
     xHit = None
     yHit = None
     cos = np.cos(angle*np.pi/180)
+    #if the stronghold is at the +X
     if cos >= 0:
         x = np.linspace(pX-10, 2700,2700)
         a = np.tan(angle*np.pi/180)
@@ -24,6 +27,7 @@ def hitCircle(pX,pZ,angle):
                 xST = x2[i]
                 yST = y2[i]
         pos2 = (xST,yST)
+    #if the stronghold is at the -X
     else:
         x = np.linspace(pX+10, -2700,2700)
         a = np.tan(angle*np.pi/180)
@@ -62,16 +66,18 @@ def StrongholdCoords():
     else:
         angle0 = (angle0-270)%360
     
+    #distance from origin
     distOrigin = np.sqrt(px0*px0 + pz0*pz0)
-    print("You're this far from the Origin: ", distOrigin)
+    #print("You're this far from the Origin: ", distOrigin)
     
     if distOrigin >= 1400:
-        print("Move 27 blocks perpendicularly to the Ender Eye flight direction and throw the second one. (4 seconds sprinting)")
+        print("Move 27 blocks perpendicularly to the Ender Eye flight direction and throw the second one. (27 blocks = 4 seconds sprinting)")
     
     else:
         circlePoint, secThrowPoint = hitCircle(px0,pz0,angle0)
         print("Go to: ", secThrowPoint, "\nCircle starts at: ", circlePoint)
-        
+    
+    #stabilishing the variables
     f3c1 = input()
     f3c1 = f3c1[42:]
     f3c1 = f3c1.split()
@@ -79,6 +85,7 @@ def StrongholdCoords():
     pz1 = float(f3c1[2])
     angle1 = float(f3c1[3])%360
         
+    #translating minecraft angles to daily life cartesian angles    
     if angle1 >= 0:
         angle1 = (angle1+90)%360
     else:
@@ -92,5 +99,5 @@ def StrongholdCoords():
     pxS = (b1 - b0)/(a0 - a1)
     pzS = pxS * a0 + b0
     
-    #printing (duh...)
+    #printing
     print("Stronghold is at: ", (pxS, pzS), " GOOD LUCK :D")
