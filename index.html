@@ -4,19 +4,16 @@
 <head>
 	<title>Minecraft Stronghold finder</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js"></script>
 </head>
 
 <body onload="brython()">
 	<script type="text/python" scr="finder-html.py"></script>
 
-<div id="space1">
-	<input id="throw1" b-on="change:nrm" type="text"/>
-	{f3c0}
+<div id="name">
+	<input id="write" b-on="change:nrm" type="text"/>
+	{myname}
 </div>
-
-
 </body>
 
 </html>
