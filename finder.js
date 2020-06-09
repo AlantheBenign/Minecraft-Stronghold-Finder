@@ -130,5 +130,3 @@ function StrongholdCoords(){
     console.log("Go to: ", [pxS, pzS], "\nGOOD LUCK :D")
 
 }
-
-StrongholdCoords()
