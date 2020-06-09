@@ -17,83 +17,84 @@
 		var angle0,px0,pz0
 
 		function makeArr(startValue, stopValue, cardinality) {
-		  var arr = [];
-		  var step = (stopValue - startValue) / (cardinality - 1);
-		  for (var i = 0; i < cardinality; i++) {
-		    arr.push(startValue + (step * i));
-		  }
-  		  return arr;
+			var arr = [];
+			var step = (stopValue - startValue) / (cardinality - 1);
+			for (var i = 0; i < cardinality; i++) {
+				arr.push(startValue + (step * i));
+			}
+  			return arr;
 		}
+		
 		function hitCircle(pX,pZ,angle){
 			var xHit,yHit
   			var xST, yST
 			cos = Math.cos(angle*Math.PI/180);
 			if (cos >= 0){
-		    var y = [];
-		    x = makeArr(pX-10, 2700,2700);
-		    a = Math.tan(angle*Math.PI/180);
-		    b = pZ - pX * a;
-		    for (i = 0; i < 2700; i++) {
-		      y.push(x[i] * a + b);
-		    }
-		    for (i = 0; i < 2700; i++) {
-		      if (x[i]*x[i] + y[i]*y[i] >= 1408*1408){
-		                xHit = x[i];
-		                yHit = y[i];
-		                break;
-		      }
-		    }
-		    pos1 = [xHit,yHit];
-		    var y2 = []
-		    x2 = makeArr(xHit, xHit+100,500);
-		    a2 = -1/Math.tan(angle*Math.PI/180)
-		    b2 = yHit - xHit * a2
-		    for (i = 0; i < 500; i++) {
-		      y2.push(x2[i] * a2 + b2);
-		    }
-		    for (i = 0; i < 500; i++) {
-		      if (Math.abs(x2[i] - xHit)**2 + Math.abs(y2[i] - yHit)**2 >= 42*42){
-		                xST = x2[i];
-		                yST = y2[i];
-		                break;
-			        }
-			    }
-			    pos2 = [xST,yST];
-			  }
-			  else {
 			    var y = [];
-			    x = makeArr(pX+10,-2700,2700);
+			    x = makeArr(pX-10, 2700,2700);
 			    a = Math.tan(angle*Math.PI/180);
-			    b = pZ - pX * a;
+			    b = pZ - (pX * a);
 			    for (i = 0; i < 2700; i++) {
-			      y.push(x[i] * a + b);
+			      y.push((x[i] * a) + b);
+		    	}
+			    for (i = 0; i < 2700; i++) {
+			        if (x[i]*x[i] + y[i]*y[i] >= 1408*1408){
+			            xHit = x[i];
+			            Hit = y[i];
+			            break;
+		      		}
+		    	}
+			    pos1 = [xHit,yHit];
+			    var y2 = []
+			    x2 = makeArr(xHit, xHit+100,500);
+			    a2 = -1/Math.tan(angle*Math.PI/180);
+			    b2 = yHit - (xHit * a2);
+			    for (i = 0; i < 500; i++) {
+			      y2.push((x2[i] * a2) + b2);
 			    }
-			    for (i = 0; i < 2700; i++) {
-			      if (x[i]*x[i] + y[i]*y[i] >= 1408*1408){
-			                xHit = x[i];
-			                yHit = y[i];
-			                break;
-			      }
+			    for (i = 0; i < 500; i++) {
+			        if ((Math.abs(x2[i] - xHit))**2 + (Math.abs(y2[i] - yHit))**2 >= 42*42){
+			            xST = x2[i];
+			            yST = y2[i];
+			            break;
+					}
+				}
+				pos2 = [xST,yST];
+			}
+			else {
+				var y = [];
+				x = makeArr(pX+10,-2700,2700);
+				a = Math.tan(angle*Math.PI/180);
+				b = pZ - pX * a;
+				for (i = 0; i < 2700; i++) {
+			    	y.push(x[i] * a + b);
+				}
+				for (i = 0; i < 2700; i++) {
+			    	if (x[i]*x[i] + y[i]*y[i] >= 1408*1408){
+			        	xHit = x[i];
+			        	yHit = y[i];
+			        	break;
+					}
 			    }
 			    pos1 = [xHit,yHit];
 			    var y2 = []
 			    x2 = makeArr(xHit, xHit+100,500);
-			    a2 = -1/Math.tan(angle*Math.PI/180)
-			    b2 = yHit - xHit * a2
+			    a2 = -1/Math.tan(angle*Math.PI/180);
+			    b2 = yHit - (xHit * a2);
 			    for (i = 0; i < 500; i++) {
-			      y2.push(x2[i] * a2 + b2);
+			    	y2.push(x2[i] * a2 + b2);
 			    }
 			    for (i = 0; i < 500; i++) {
-			      if (Math.abs(x2[i] - xHit)**2 + Math.abs(y2[i] - yHit)**2 >= 42*42){
-			                xST = x2[i];
-			                yST = y2[i];
-			                break;
+			    	if ((Math.abs(x2[i] - xHit))**2 + (Math.abs(y2[i] - yHit))**2 >= 42*42){
+			            xST = x2[i];
+			            yST = y2[i];
+			            break;
 			      }
 			    }
 			    pos2 = [xST,yST];
-			  }
-			  return [pos1,pos2]
-			}</script>
+			}
+			return [pos1,pos2]
+		}</script>
 
 	<input type="text" size="70" name="throw1" id="throw1"><br><br>
 	<button onclick="StrongholdCoords(document.getElementById('throw1').value)">Calculate Second Throw Position</button><br><br>
@@ -117,7 +118,7 @@
 		    }
 
 		    distOrigin = Math.sqrt(px0*px0 + pz0*pz0);
-		    //console.log("You're this far from the Origin: ", distOrigin)
+		    console.log("You're this far from the Origin: ", distOrigin)
 
 		    if (distOrigin >= 1400){
 		      console.log("Move 27 blocks perpendicularly to the Ender Eye flight direction and throw the second one. (4 seconds sprinting)");
@@ -148,7 +149,6 @@
 		    px1 = Number(f3c1[0]);
 		    pz1 = Number(f3c1[2]);
 		    angle1 = Number(f3c1[3])%360;
-		    console.log(px1,pz1,angle1);
 
 		    if (angle1 >= 0){
 		      angle1 = (angle1+90)%360;
