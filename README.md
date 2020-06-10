@@ -42,3 +42,4 @@ The program now informs the player what are the best position's coordenates to d
 ![tutorial8](https://github.com/AlantheBenign/Minecraft-Stronghold-Finder/blob/master/Images/tutorial8.png)
 
 So, **the program informs another point's coordenates, arriving there, the player must throw a third eye of ender and it will, for sure, fly down directly to the stronghold location. Now just dig down and good luck!**
+ 
