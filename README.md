@@ -5,7 +5,7 @@ That's a Python algorithm that helps speedrunners to find the Stronghold the fas
 This code uses Minecraft in-game information and, with geometry, calculates the best location to throw the eyes of ender to (always) find the stronghold position. We could, theoretically, find the stronghold position using only two eyes of ender, but this method requires the player to go to such locations that, to be precise enough and spend less time, it would need to know the stronghold location itself to find a good spot to throw the second eye of ender (or go to far away, spending even more time), what is in itself a kind of a paradox. So, this program requires three eyes of ender throws to find the exactly stronghold location.
 
 More details about the math:
-[PDF File](https://github.com/AlantheBenign/Minecraft-Stronghold-Finder/blob/master/Minecraft_Stronghold_Finding_Mathematics%20(10).pdf)
+[PDF File](https://github.com/AlantheBenign/Minecraft-Stronghold-Finder/blob/master/Minecraft_Stronghold_Finding_Mathematics%20(11).pdf)
 
 ## How to use it?
 It's very simple to use!
