@@ -7,6 +7,9 @@ This code uses Minecraft in-game information and, with geometry, calculates the 
 More details about the math:
 [PDF File](https://github.com/AlantheBenign/Minecraft-Stronghold-Finder/blob/master/Minecraft_Stronghold_Finding_Mathematics%20(11).pdf)
 
+## Using it:
+[Let's go!](http://AlantheBenign.github.io/Minecraft-Stronghold-Finder/) 
+
 ## How to use it?
 It's very simple to use!
 
@@ -39,6 +42,3 @@ The program now informs the player what are the best position's coordenates to d
 ![tutorial8](https://github.com/AlantheBenign/Minecraft-Stronghold-Finder/blob/master/tutorial8.png)
 
 So, **the program informs another point's coordenates, arriving there, the player must throw a third eye of ender and it will, for sure, fly down directly to the stronghold location. Now just dig down and good luck!**
-
-## Using it:
-[Let's go!](http://AlantheBenign.github.io/Minecraft-Stronghold-Finder/) 
