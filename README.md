@@ -21,7 +21,7 @@ Then, **press F3+C** (WARNING: DO NOT PRESS IT FOR TO LONG, BECAUSE IF YOU DO SO
 
 ![tutorial11](https://github.com/AlantheBenign/Minecraft-Stronghold-Finder/blob/master/tutorial11.png)
 
-Thereby, the information about the player's position and direction it is looking is now on the clipboard, this is the program's first input, the program only accepts this data format. Then, **paste it at the program's first text box** and **click on the "Calculate Second Throw Position Button"** (EXAMPLE: /execute in minecraft:overworld run tp @s 158.49 71.00 -306.67 -540.90 10.50).
+Thereby, the information about the player's position and direction it is looking is now on the clipboard, this is the program's first input, the program only accepts this data format. Then, **paste it at the program's first text box (CTRL+V)** and **click on the "Calculate Second Throw Position Button"** (EXAMPLE: /execute in minecraft:overworld run tp @s 158.49 71.00 -306.67 -540.90 10.50).
 
 ![tutorial1](https://github.com/AlantheBenign/Minecraft-Stronghold-Finder/blob/master/tutorial1.png)
 
